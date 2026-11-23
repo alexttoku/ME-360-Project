@@ -1,2 +1,1 @@
-
- 
+Main file to work in is __init__.py in "src\me_360_project\__init__.py"
