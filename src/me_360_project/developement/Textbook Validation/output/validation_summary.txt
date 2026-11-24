@@ -1,0 +1,9 @@
+Figure 1.15: PASS
+  {"name": "Figure 1.15", "expected_pose_count": 2, "actual_pose_count": 2, "known_angle_matches": [true, true], "max_absolute_error": 0.0, "passed": true}
+Four-pose example: PASS
+  {"name": "Four-pose example", "expected_pose_count": 4, "actual_pose_count": 4, "max_absolute_error": 1.212364e-13, "passed": true}
+Six-pose example: PASS
+  {"name": "Six-pose example", "expected_pose_count": 6, "actual_pose_count": 6, "max_absolute_error": 3.0842e-12, "passed": true}
+Bisection versus Brent: PASS
+  {"name": "Bisection versus Brent", "bracket_count": 4, "root_count_match": true, "max_root_difference": 5.591083e-13, "passed": true}
+Overall: PASS

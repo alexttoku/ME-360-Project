@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "name": "Figure 1.15",
+      "expected_pose_count": 2,
+      "actual_pose_count": 2,
+      "known_angle_matches": [
+        true,
+        true
+      ],
+      "max_absolute_error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "Four-pose example",
+      "expected_pose_count": 4,
+      "actual_pose_count": 4,
+      "max_absolute_error": 1.212364e-13,
+      "passed": true
+    },
+    {
+      "name": "Six-pose example",
+      "expected_pose_count": 6,
+      "actual_pose_count": 6,
+      "max_absolute_error": 3.0842e-12,
+      "passed": true
+    },
+    {
+      "name": "Bisection versus Brent",
+      "bracket_count": 4,
+      "root_count_match": true,
+      "max_root_difference": 5.591083e-13,
+      "passed": true
+    }
+  ],
+  "all_passed": true,
+  "output_directory": "C:\\Users\\tokun\\Desktop\\Github\\ME-360-Project\\src\\me_360_project\\developement\\Textbook Validation\\output"
+}
