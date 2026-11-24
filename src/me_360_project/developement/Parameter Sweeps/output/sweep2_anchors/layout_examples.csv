@@ -1,0 +1,5 @@
+layout,x1,x2,y2,struts,pose_count,max_strut_error
+baseline_x1_5_anchor3_0_6,,,,5-5-3,4,3.69e-14
+wide_base_x1_8,8.0,,,5-5-3,2,2.66e-15
+narrow_base_x1_2,2.0,,,5-5-3,4,4.75e-14
+six_pose_anchor3_0_6,,0.0,6.0,5-7-3,6,2.93e-13
