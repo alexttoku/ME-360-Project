@@ -1,5 +1,0 @@
-Part A: {'max_pose_error_predictor': np.float64(2.630254099606471e-12), 'max_pose_error_naive': np.float64(0.8662383431488961), 'naive_switch_time': 6.95, 'max_strut_error': 2.3860913245243864e-12, 'min_pose_count': 4, 'max_pose_count': 4}
-Part B: {'start_mode': 1, 'start_theta': '-0.7208', 'singular_p2_values': '7.0220 6.9675 7.8490', 'largest_step_in_pose': '1.90e-01', 'returned_to_p2_5': True, 'end_mode': 2, 'end_theta': '-0.3310', 'end_strut_error': '1.78e-15'}
-Part B: {'start_mode': 2, 'start_theta': '-0.3310', 'singular_p2_values': '7.8490 6.9675 7.0220', 'largest_step_in_pose': '1.90e-01', 'returned_to_p2_5': True, 'end_mode': 1, 'end_theta': '-0.7208', 'end_strut_error': '8.88e-15'}
-Part B: {'start_mode': 3, 'start_theta': '1.1437', 'singular_p2_values': '9.2620', 'largest_step_in_pose': '5.51e-02', 'returned_to_p2_5': True, 'end_mode': 4, 'end_theta': '2.1159', 'end_strut_error': '8.88e-16'}
-Part B: {'start_mode': 4, 'start_theta': '2.1159', 'singular_p2_values': '9.2620', 'largest_step_in_pose': '5.51e-02', 'returned_to_p2_5': True, 'end_mode': 3, 'end_theta': '1.1437', 'end_strut_error': '8.88e-16'}

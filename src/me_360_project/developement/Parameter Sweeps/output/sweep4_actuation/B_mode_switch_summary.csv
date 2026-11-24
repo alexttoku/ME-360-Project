@@ -1,5 +1,0 @@
-start_mode,start_theta,singular_p2_values,largest_step_in_pose,returned_to_p2_5,end_mode,end_theta,end_strut_error
-1,-0.7208,7.0220 6.9675 7.8490,1.90e-01,True,2,-0.3310,1.78e-15
-2,-0.3310,7.8490 6.9675 7.0220,1.90e-01,True,1,-0.7208,8.88e-15
-3,1.1437,9.2620,5.51e-02,True,4,2.1159,8.88e-16
-4,2.1159,9.2620,5.51e-02,True,3,1.1437,8.88e-16
