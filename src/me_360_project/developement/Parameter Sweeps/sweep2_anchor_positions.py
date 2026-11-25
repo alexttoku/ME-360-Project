@@ -35,7 +35,8 @@ def count_fine(**anchor_changes):
 
 
 def part_a():
-    x1_values = np.round(np.arange(0.25, 10.0001, 0.05), 4)
+    # Step 0.01: a 0.05 step jumps over the narrow 6-pose window near x1 = 3.
+    x1_values = np.round(np.arange(0.25, 10.0001, 0.01), 4)
     counts = np.array([count(x1=x1) for x1 in x1_values])
     sc.write_csv(OUT / "pose_count_vs_x1.csv",
                  [{"x1": x, "pose_count": int(c)} for x, c in zip(x1_values, counts)])

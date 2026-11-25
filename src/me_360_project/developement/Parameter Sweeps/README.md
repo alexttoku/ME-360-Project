@@ -50,7 +50,7 @@ uv run python sweep4_actuation.py         # ~3 min
 
 ### Sweep 2: anchor positions (platform and struts fixed)
 
-- **x1 (anchor 2 along the x-axis), struts (5,5,3):** 2 poses for x1 < 1.004, 4 poses for 1.004 – 5.186, 2 poses for 5.186 – 8.692, 0 poses beyond 8.692. The textbook x1 = 5 sits just 0.19 below a 4→2 transition.
+- **x1 (anchor 2 along the x-axis), struts (5,5,3), step 0.01:** 2 poses for x1 < 1.004, 4 for 1.004 – 2.971, **6 for 2.971 – 3.027** (except 4 for 2.99986 – 3.00014, around the singular point x1 = 3), 4 for 3.027 – 5.186, 2 for 5.186 – 8.692, 0 beyond 8.692. The textbook x1 = 5 sits just 0.19 below a 4→2 transition. The earlier 0.05 step jumped over the 6-pose window entirely.
 - **Anchor 3 map, struts (5,5,3):** 0, 2 or 4 poses; never 6 anywhere on the grid (x2 from −4 to 6, y2 from 1 to 10, step 0.2).
 - **Anchor 3 map, struts (5,7,3)** (Sauer's six-pose case): a large six-pose region (x2 from −3.8 to 1.2, y2 from 1.0 to 6.0). The textbook anchor (0, 6) is on the **edge** of that region.
 - **Odd counts (3 or 5) at 5 grid points** are real double roots, not bugs. They are a flat singular pose at θ = 0: vertex 1 at (−5, 0), with strut 1, strut 2 and side L3 all on the x-axis (5 + 5 − 3 = 7 = p2). That pose exists whenever anchor 3 is 3 units from vertex 3 = (−2, 3), i.e. on the dashed circle in the map, and all 5 odd points lie on it.
@@ -59,7 +59,7 @@ uv run python sweep4_actuation.py         # ~3 min
 
 ### Sweep 3: platform size and shape (anchors and struts fixed)
 
-- **Uniform scale s** (γ fixed): 2 poses for s < 0.660, 4 for 0.660 – 1.550, **6 for 1.550 – 1.835**, 4 above 1.835 (up to s = 2).
+- **Uniform scale s** (γ fixed, step 0.005): 2 poses for s < 0.300, **4 for 0.300 – 0.313** (narrow), 2 for 0.313 – 0.660, 4 for 0.660 – 1.550, **6 for 1.550 – 1.835**, 4 above 1.835 (up to s = 2). The earlier 0.02 step jumped over the 0.300 – 0.313 window.
 - **γ** (L2 = 3√2, L3 = 3, L1 from the law of cosines): 2 poses for γ < 34.5°, 4 for 34.5° – 134.5°, 2 above.
 - **Workspace** with strut limits 2 ≤ p ≤ 8 (assumed actuator stroke). Area of the positions vertex 1 can reach:
 
@@ -87,7 +87,7 @@ uv run python sweep4_actuation.py         # ~3 min
 
 ## Known limitations (for the Discussion section)
 
-1. The solver finds roots by sign changes on a θ grid, so a double root (tangent) or two roots closer than the grid spacing can be missed. This was handled with finer grids near transitions and a separate check for minima of |f|, but the maps use a 0.2 step in anchor position, so very thin regions could still be missed.
+1. The solver finds roots by sign changes on a θ grid, so a double root (tangent) or two roots closer than the grid spacing can be missed. This was handled with finer grids near transitions and a separate check for minima of |f|, but the maps use a 0.2 step in anchor position, so very thin regions could still be missed. The 1-D sweeps had the same problem with the parameter step: x1 at 0.05 and scale at 0.02 missed narrow windows that show up at 0.01 and 0.005.
 2. Poses where D ≈ 0 are skipped by the solver (x, y can't be recovered from N/D).
 3. The workspace strut limits [2, 8] are an assumption, not from a real actuator.
 4. Nearest-pose tracking can jump between assembly modes near singularities; the predictor fixes it for the tested motion, and a smaller step size would also help.

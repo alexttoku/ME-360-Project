@@ -172,7 +172,8 @@ def part_c():
 
 def main():
     # Part A: uniform scale
-    scales = np.round(np.arange(0.2, 2.0001, 0.02), 4)
+    # Step 0.005: a 0.02 step jumps over the narrow 4-pose window near s = 0.3.
+    scales = np.round(np.arange(0.2, 2.0001, 0.005), 4)
     counts, trans = sweep(scales, scaled)
     sc.write_csv(OUT / "pose_count_vs_scale.csv",
                  [{"scale": s, "pose_count": int(c)} for s, c in zip(scales, counts)])
